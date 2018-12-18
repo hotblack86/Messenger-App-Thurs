@@ -5,11 +5,11 @@
 <body>
   <h1>MessageApp</h1>
   <form action='/new-message' method='post'>
-    <textarea name="Message" cols="40" rows="5"></textarea><br>
+    <textarea name="message" cols="40" rows="5"></textarea><br>
     <input type='submit' value='Send'>
     </form>
     <br>
-    <%=@message%>
+    <%=@history.reverse%>
 </body>
 </center>
 </html>
