@@ -9,7 +9,9 @@
     <input type='submit' value='Send'>
     </form>
     <br>
-    <%=@history.reverse%>
+    <%@history.reverse.each do |msg| %>
+      <%= msg.msg %> - <%= msg.time %><br>
+    <%end%>
 </body>
 </center>
 </html>

@@ -1,5 +1,5 @@
 require 'sinatra/base'
-
+require_relative './lib/message'
 class MessageApp < Sinatra::Base
   enable :sessions
 
@@ -11,10 +11,10 @@ class MessageApp < Sinatra::Base
     @history = session[:history]
     erb :index
   end
-# history[:message]<<(4)
-# { timestamp: tweet_date, tweet: tweet_text }
+
   post '/new-message' do
-    session[:history]<<{Time.new.strftime("%d-%m-%Y %H:%M") => (params[:message])}
+    message = Message.new(params[:message])
+    session[:history]<< message
     redirect '/'
   end
 
