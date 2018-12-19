@@ -21,7 +21,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'timecop'
-
+require 'orderly'
 Capybara.app = MessageApp
 
 RSpec.configure do |config|
