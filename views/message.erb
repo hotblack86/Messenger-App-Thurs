@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<html>
+<center>
+<body>
+  <h1>MessageApp</h1>
+  <%@history.each do |message|%>
+    <%= message.id.to_i == @msg_id ? message.msg : ""%>
+  <%end%>
+</body>
+</center>
+</html>

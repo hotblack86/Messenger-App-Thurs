@@ -18,5 +18,11 @@ class MessageApp < Sinatra::Base
     redirect '/'
   end
 
+  get '/messages/:id' do
+    @msg_id = params[:id].to_i
+    @history = session[:history]
+    erb(:message)
+  end
+
   run! if app_file == $0
 end
