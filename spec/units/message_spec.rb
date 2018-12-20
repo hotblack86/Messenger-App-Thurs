@@ -1,4 +1,4 @@
-require_relative '../lib/message'
+require './lib/message'
 
 RSpec.describe 'Message' do
   let(:message) { Message.new("test1") }

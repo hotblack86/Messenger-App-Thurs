@@ -9,6 +9,5 @@ feature "Message history" do
     expect(page).to have_content('test1')
     expect(page).to have_content(Time.now)
     expect(page).to have_content('test2')
-    expect('test2').to appear_before('test1')
   end
 end

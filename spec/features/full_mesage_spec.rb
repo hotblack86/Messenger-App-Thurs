@@ -1,3 +1,5 @@
+
+
 feature 'displays full length of message' do
   scenario 'expect to take user to a new page displaying full length of message' do
     visit '/'

@@ -4,9 +4,7 @@
 <center>
 <body>
   <h1>MessageApp</h1>
-  <%@history.each do |message|%>
-    <%= message.id == @msg_id ? message.msg : ""%>
-  <%end%>
+  <%= @message.content%>
 </body>
 </center>
 </html>

@@ -13,15 +13,17 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-ENV['TEST_ENV'] = 'test'
+ENV['RACK_ENV'] = 'test'
 
-require_relative '../app'
+#require File.join(File.dirname(__FILE__), "..", "app.rb")
+
+require './app.rb'
 
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'timecop'
-require 'orderly'
+#require 'orderly'
 Capybara.app = MessageApp
 
 RSpec.configure do |config|

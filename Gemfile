@@ -6,17 +6,25 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem "capybara", "~> 3.12"
+ruby '2.5.3'
 
-gem "rspec", "~> 3.8"
+gem "capybara"
 
-gem "sinatra", "~> 2.0"
+gem "rspec"
 
-gem "simplecov", "~> 0.16.1"
+gem "sinatra"
 
-gem "timecop", "~> 0.9.1"
+#gem "simplecov"
 
-gem "orderly", "~> 0.0.3"
+#gem "timecop"
 
+#gem "orderly"
 
 gem 'pry'
+
+gem 'dm-postgres-adapter'
+
+gem 'data_mapper', '1.2.0'
+
+
+

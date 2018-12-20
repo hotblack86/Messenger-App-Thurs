@@ -1,28 +1,33 @@
 require 'sinatra/base'
-require_relative './lib/message'
-require 'pry'
+require './lib/message'
+#require 'data_mapper'
+require './config/data_mapper'
+# require 'pry'
 
 class MessageApp < Sinatra::Base
   enable :sessions
 
-  before do
-    session[:history].nil? ? session[:history]=[] : session[:history]
-  end
+  #before do
+   # session[:list].nil? ? session[:list]=[] : session[:list]
+  #end
 
   get '/' do
-    @history = session[:history]
+    @messages = Message.all
+    #@list = session[:list]
     erb :index
   end
 
   post '/new-message' do
-    message = Message.new(params[:message])
-    session[:history]<< message
+    Message.create(content: params[:content])
+    #message = Message.new(params[:message])
+    #session[:list]<< message
     redirect '/'
   end
 
   get '/messages/:id' do
-    @msg_id = params[:id].to_i
-    @history = session[:history]
+    @message = Message.get(params[:id])
+    #@msg_id = params[:id].to_i
+    #@list = session[:list]
     erb(:message)
   end
 
