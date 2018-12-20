@@ -5,7 +5,7 @@ RSpec.describe 'Message' do
   subject(:message) {Message.new("test1")}
     before do
       # binding.pry
-      Timecop.freeze
+      #Timecop.freeze
     end
 
     it "will return a message" do
