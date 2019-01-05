@@ -1,3 +1,5 @@
+require './lib/message'
+
 feature 'homepage' do
   scenario 'expect homepage to have header, textbox and submit button' do
     visit('/')

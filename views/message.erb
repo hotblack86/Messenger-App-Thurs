@@ -6,5 +6,19 @@
   <h1>MessageApp</h1>
   <%= @message.content%>
 </body>
+
+<form action="/message/<%= @message.id %>/edit">
+  <input type="submit" value="Edit">
+</form>
+
+<form action="/delete-message/<%= @message.id %>" method="post">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
+
+<form action="/">
+  <input type="submit" value="Home">
+</form>
+
 </center>
 </html>

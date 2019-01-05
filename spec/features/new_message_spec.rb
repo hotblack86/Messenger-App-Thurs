@@ -1,5 +1,7 @@
+require './lib/message'
+
 feature 'new message' do
-  scenario 'send new message and display the first 20 characters'do
+  scenario 'send new message and display the first 20 characters' do
     visit '/'
     fill_in('content', :with => 'abcdefghijklmnopqrstuvwxyz')
     click_button('Send')

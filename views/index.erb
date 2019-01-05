@@ -4,14 +4,14 @@
 <center>
 <body>
   <h1>MessageApp</h1>
-  <form action='/new-message' method='post'>
+  <form action='/message' method='post'>
     <textarea name="content" cols="40" rows="5"></textarea><br>
     <input type='submit' value='Send'>
-    </form>
+  </form>
     <br>
-    <% @messages.reverse.each do |x| %>
-      <a href="/messages/<%= x.id %>"><%= x.content[0...20] %></a> - <%= x.created_at %><br>
-    <%end%>
+    <% @messages.reverse.each do |message| %>
+      <a href="/messages/<%= message.id %>"> <%= message.content[0...20] %></a> - <%= message.timestamp %><br>
+    <%end%>   
 </body>
 </center>
 </html>

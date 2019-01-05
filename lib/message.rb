@@ -2,19 +2,16 @@ require 'data_mapper'
 
 class Message
 
-include DataMapper::Resource
+  include DataMapper::Resource
 
-property :id,         Serial
-property :content,    Text
-property :created_at, DateTime
+  property :id,         Serial
+  property :content,    Text
+  property :created_at, DateTime
 
-
-
-# attr_reader :msg, :time, :id
-#   def initialize(msg)
-#     @msg = msg
-#     @time = Time.now
-#     @id = Time.now.to_i
-#   end
+  def timestamp
+    created_at.strftime("%d-%m-%y %H:%M:%S")
+  end
 
 end
+
+DataMapper.finalize
