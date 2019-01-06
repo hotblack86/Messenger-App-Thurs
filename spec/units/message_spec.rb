@@ -2,25 +2,26 @@ require './lib/message'
 
 RSpec.describe 'Message' do
   let(:message) { Message.create(:content => "test1") }
-  #let(:id) { Message.create(:id => 9) }
-  let(:id) {double :id}
+  let(:id) { :double }
+  let(:time) { Time.now }
 
-  before do
-    # binding.pry
-    # Timecop.freeze
+  describe 'content' do
+    it "will return a message" do
+      expect(message.content).to eq "test1"
+    end
   end
 
-  it "will return a message" do
-    expect(message.content).to eq "test1"
+  describe 'id' do
+    it "will return a id" do
+      expect(message.id).to eq("#{message.id}".to_i)
+    end
   end
 
-  # it "will return a timestamp" do
-    # message = Message.create(:content => "test1")
-    # allow(Time).to receive(:now).to return Time.now
-    # expect(message.created_at).to eq Time.now
-  # end
-
-  it "will return a id" do
-    expect(message.id). to eq(6)
+  describe '#timestamp' do
+    it "will format created_at to display a more user friendly time" do
+      allow(message).to receive(:created_at) { time }
+      expect(message.timestamp).to eq time.strftime('%d-%m-%y %H:%M:%S')
+    end
   end
+  
 end

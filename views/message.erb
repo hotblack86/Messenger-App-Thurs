@@ -7,7 +7,7 @@
   <%= @message.content%>
 </body>
 
-<form action="/message/<%= @message.id %>/edit">
+<form action="/message/<%= @message.id %>/edit" method="get">
   <input type="submit" value="Edit">
 </form>
 
