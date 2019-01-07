@@ -1,4 +1,5 @@
 require 'data_mapper'
+require './lib/tag'
 
 class Message
 
@@ -11,6 +12,8 @@ class Message
   def timestamp
     created_at.strftime("%d-%m-%y %H:%M:%S")
   end
+
+  
 
 end
 

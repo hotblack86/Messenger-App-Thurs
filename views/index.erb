@@ -5,13 +5,14 @@
 <body>
   <h1>MessageApp</h1>
   <form action='/message' method='post'>
-    <textarea name="content" cols="40" rows="5"></textarea><br>
+    <h2>Message</h2><textarea name="content" cols="40" rows="5"></textarea>
+    <h2>Tag</h2><textarea name="label" cols="20" rows="1"></textarea><br>
     <input type='submit' value='Send'>
   </form>
     <br>
     <% @messages.reverse.each do |message| %>
       <a href="/messages/<%= message.id %>"> <%= message.content[0...20] %></a> - <%= message.timestamp %><br>
-    <%end%>   
+    <%end%>  
 </body>
 </center>
 </html>

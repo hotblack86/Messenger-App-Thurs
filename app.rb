@@ -2,6 +2,7 @@ ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require './lib/message.rb'
+require './lib/tag.rb'
 require 'data_mapper'
 require './config/data_mapper.rb'
 require 'pry'
@@ -14,11 +15,13 @@ class MessageApp < Sinatra::Base
 
   get '/' do
     @messages = Message.all
+    #@tag = Tag.get(params[:id])
     erb(:index)
   end
 
   post '/message' do
     Message.create(content: params[:content])
+    #Tag.create(label: params[:label])
     redirect '/'
   end
 

@@ -1,13 +1,13 @@
 require './lib/message'
 
 RSpec.describe 'Message' do
-  let(:message) { Message.create(:content => "test1") }
+  let(:message) { Message.create(:content => 'test1') }
   let(:id) { :double }
   let(:time) { Time.now }
 
   describe 'content' do
     it "will return a message" do
-      expect(message.content).to eq "test1"
+      expect(message.content).to eq 'test1'
     end
   end
 
